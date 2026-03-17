@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: emergency-service
+          uri: lb://emergency-service
+          predicates:
+            - Path=/api/emergency/**
+
+        - id: resource-tracker-service
+          uri: lb://resource-tracker-service
+          predicates:
+            - Path=/api/resources/**
+
+        - id: hospital-service
+          uri: lb://hospital-service
+          predicates:
+            - Path=/api/hospitals/**
+
+        - id: route-optimizer-service
+          uri: lb://route-optimizer-service
+          predicates:
+            - Path=/api/routes/**
+
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notifications/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
