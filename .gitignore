@@ -1,0 +1,30 @@
+# Maven
+target/
+*.class
+*.jar
+*.war
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment
+*.env
+application-local.yml
+
+# Spring Boot
+spring-shell.log
+.idea/
+target/
+*.log
+node_modules/

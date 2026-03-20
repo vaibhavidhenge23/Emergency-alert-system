@@ -8,8 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="hospital-service" />
         <module name="eureka-server" />
+        <module name="resource-tracker-service" />
         <module name="emergency-service" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +21,9 @@
       <module name="api-gateway" options="-parameters" />
       <module name="emergency-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="hospital-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="resource-tracker-service" options="-parameters" />
     </option>
   </component>
 </project>
